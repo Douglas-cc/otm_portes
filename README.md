@@ -3,10 +3,15 @@ Uma rede hospitalar deseja usar u algoritmo de otimização para minimizar perda
 
 # Variaveis
 **x = valores de negociação**
+
 **mc = media cenario dos valores de negociação**
+
 **li = limite inferior**
+
 **ls = limite superior**
+
 **m = media da população**
+
 **N = tamanho da população**
 
 
