@@ -2,12 +2,17 @@
 Uma rede hospitalar deseja usar u algoritmo de otimização para minimizar perda a fim de aumentar o ganhos em negociação de portes cirurgicos com operadoras de planos de saúde, além disso sera preciso minimizar o desvio padrão da receita dos portes a fim de balancear os valores dos portes, para que resolver o problema onde uma porte com frequencia baixa tenha valores muito altos e vice e versa
 
 # Variaveis
-x = valores de negociação
-mc = media cenario dos valores de negociação
-li = limite inferior
-ls = limite superior
-m = media da população
-N = tamanho da população
+**x = valores de negociação**
+
+**mc = media cenario dos valores de negociação**
+
+**li = limite inferior**
+
+**ls = limite superior**
+
+**m = media da população**
+
+**N = tamanho da população**
 
 
 # Funções Objetivas
