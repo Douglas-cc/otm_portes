@@ -1,5 +1,5 @@
 # Proposta
-Uma rede hospitalar deseja usar u algoritmo de otimização para minimizar perda a fim de aumentar o ganhos em negociação de portes cirurgicos com operadoras de planos de saúde, além disso sera preciso minimizar o desvio padrão da receita dos portes a fim de balancear os valores dos portes, para que resolver o problema onde uma porte com frequencia baixa tenha valores muito altos e vice e versa
+Uma rede hospitalar deseja otimização para maximizar ganhos em negociação de portes cirurgicos com operadoras de planos de saúde, além disso, será necessario minimizar o desvio padrão da receita do porte da negociação com operadora para que conseguentemente os portes com valores de negociação baixos e frequencias (ou seja numero de vendas) altas possam aumentar um pouco e portes com valores altos e frequencia baixa possa diminuir. Por fim, mas não menos importante foi preciso criar duas restrições para pegar intervalos de receita total esperado para a negociação dos portes como podemos ver a baixo:
 
 # Variaveis
 **x = valores de negociação**
