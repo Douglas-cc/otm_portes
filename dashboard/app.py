@@ -37,21 +37,20 @@ def main():
                 input.media_cenario.values
             )
             st.subheader('Todas as soluções')    
-            st.dataframe(generete_df_solution(output[0]))
+            st.dataframe(generete_df_solution(output["res_x"]))
 
             st.subheader('Valores das funções objetivas')
-            st.write(output[1])
+            st.write(output["res_f"])
 
-            # st.subheader('Frente de Pareto')    
-            # graph = alg.frente_pareto(
-            #     output[1],
-            #     input.media_cenario.values,
-            #     input.media.values, 
-            #     input.frequencia.values,
-            #     input.valor_otimo.values,
-
-            # )
-            # st.pyplot(graph)
+            st.subheader('Frente de Pareto')    
+            graph = alg.frente_pareto(
+                output["res_f"],
+                input.media_cenario.values,
+                input.media.values, 
+                input.frequencia.values,
+                input.valor_otimo.values
+            )
+            st.pyplot(graph)
 
         if st.checkbox('30 soluções que mais diminuiram o porte 7'):
             output = alg.nsga2(

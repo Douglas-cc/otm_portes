@@ -15,8 +15,14 @@ class Algorithms:
         self.termination = get_termination("n_gen", 200)
         self.seed = 1
 
-    def nsga2(self, target_lower, target_upper, xl_input,
-              xu_input, frequencia, media_cenario):
+    def nsga2(self, 
+            target_lower,
+            target_upper,
+            xl_input,
+            xu_input,
+            frequencia,
+            media_cenario
+        ):
         
         algo = NSGA2(
             pop_size = self.population,
@@ -42,24 +48,29 @@ class Algorithms:
             verbose=False
         )
                 
-        return [res.X, res.F]
+        return {"res_x":res.X, "res_f":res.F}
     
     def frente_pareto(self, f, media_cenario, media, frequencia, valor_otimo):
-        # Calculando f1 e f2 para o valor otimo
-        f1_valor_otimo = sum((media_cenario - valor_otimo) * frequencia)
-        f2_valor_otimo = np.std(1/frequencia * valor_otimo * 1)
+        # ordenar f1 e f2 das soluções
+        f1_ordenado_decres = sorted(f[:,0], reverse=True) 
+        f2_ordenado_cres = sorted(f[:,1])
 
-        # Calculando f1 e f2 para o valor media
-        f1_valor_media = sum((media_cenario -  media) * frequencia)
-        f2_valor_media = np.std(1/frequencia * media * 1)
-
-        fig, ax = plt.subplots(figsize=[12, 10], dpi=100)
-        ax.scatter(f[:,0], f[:,1], color="firebrick", label="Soluções NSGA-II")
-        ax.scatter(f1_valor_otimo, f2_valor_otimo, color="blue", label="Valor otimo")
-        ax.scatter(f1_valor_media, f2_valor_media, color="green", label="Valor media")
+        fig, ax = plt.subplots(figsize=[8, 4], dpi=100)
+        ax.scatter(f1_ordenado_decres, f2_ordenado_cres, color="firebrick", label="Soluções NSGA-II")
 
         ax.set_ylabel("$f_2$")
         ax.set_xlabel("$f_1$")
-        ax.legend()
-        return fig 
+            
+        # Calcule os valores mínimos e máximos de f2, f1, e otimo
+        min_f2 = min(f2_ordenado_cres)
+        max_f2 = max(f2_ordenado_cres)
 
+        min_f1 = min(f1_ordenado_decres)
+        max_f1 = max(f1_ordenado_decres)
+
+        ax.set_ylim(min_f2, max_f2)
+        ax.set_xlim(min_f1, max_f1)
+
+        ax.legend()
+        return fig
+        

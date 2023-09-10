@@ -1,8 +1,17 @@
 import numpy as np
 from pymoo.core.problem import ElementwiseProblem
 
+
 class ModelingProblem(ElementwiseProblem):
-    def __init__(self, target_lower, target_upper, xl_input, xu_input, frequencia, media_cenario):
+    def __init__(self,
+            target_lower,
+            target_upper,
+            xl_input,
+            xu_input,
+            frequencia,
+            media_cenario
+        ):
+
         self.target_lower = target_lower
         self.target_upper = target_upper
         self.xl_input = xl_input
@@ -28,4 +37,3 @@ class ModelingProblem(ElementwiseProblem):
                                              
         out['F'] = [f1, f2]
         out['G'] = [g1, g2]
-

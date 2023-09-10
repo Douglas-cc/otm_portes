@@ -24,8 +24,8 @@ def smaller_sizes(df_solutions, portes=[7], total_solutions=30):
             'media',
             'valor_otimo',
             'valor_otimista',
-        ]
-    )
+        ])
+
     aux = df_solutions[df_solutions.porte.isin(portes)]
     df = pd.DataFrame()
     df['solutions'] = aux.columns[1:]
@@ -50,5 +50,3 @@ def receive_solutions(df_solutions, solutions_selected, frequencia, total_soluti
 def dif_receita(max_receive, great_value, freq, n=5):
     max_receive['dif_receitas'] = max_receive.receita - sum(great_value * freq)
     return max_receive.nsmallest(n, columns='dif_receitas', keep='first')
-
-
