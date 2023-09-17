@@ -29,13 +29,14 @@ def smaller_sizes(df_solutions, portes=[7], total_solutions=30):
     aux = df_solutions[df_solutions.porte.isin(portes)]
     df = pd.DataFrame()
     df['solutions'] = aux.columns[1:]
+    
     if aux.shape[0] == 0:
         df[f'porte_{portes[0]}'] = aux.values[0][1:]
         df[f'porte_{portes[1]}'] = aux.values[1][1:]
-    
-    if aux.shape[0] == 1:
+    elif aux.shape[0] == 1:
         df[f'porte_{portes[0]}'] = aux.values[0][1:]
-                
+    else:
+        return "error"    
     return df.nsmallest(total_solutions, columns=df.columns[1:], keep='first')
 
     

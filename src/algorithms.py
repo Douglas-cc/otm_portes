@@ -50,27 +50,13 @@ class Algorithms:
                 
         return {"res_x":res.X, "res_f":res.F}
     
+    
     def frente_pareto(self, f, media_cenario, media, frequencia, valor_otimo):
-        # ordenar f1 e f2 das soluções
         f1_ordenado_decres = sorted(f[:,0], reverse=True) 
         f2_ordenado_cres = sorted(f[:,1])
-
-        fig, ax = plt.subplots(figsize=[8, 4], dpi=100)
-        ax.scatter(f1_ordenado_decres, f2_ordenado_cres, color="firebrick", label="Soluções NSGA-II")
-
+        fig, ax = plt.subplots(figsize=[12, 4], dpi=100)
+        ax.scatter(f1_ordenado_decres, f2_ordenado_cres, color="green")
+        ax.set_title("Frente de Pareto")
         ax.set_ylabel("$f_2$")
         ax.set_xlabel("$f_1$")
-            
-        # Calcule os valores mínimos e máximos de f2, f1, e otimo
-        min_f2 = min(f2_ordenado_cres)
-        max_f2 = max(f2_ordenado_cres)
-
-        min_f1 = min(f1_ordenado_decres)
-        max_f1 = max(f1_ordenado_decres)
-
-        ax.set_ylim(min_f2, max_f2)
-        ax.set_xlim(min_f1, max_f1)
-
-        ax.legend()
         return fig
-        

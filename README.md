@@ -1,21 +1,27 @@
-# Proposta
+<div align="center">
+
+# Otimizador de Negociação de Portes Cirurgicos
+![Alt Text](src/Surgery.jpg)
+## ⭐  Quick Start  ⭐
+
+</div>
+
+## Proposta
 Uma rede hospitalar deseja usar u algoritmo de otimização para minimizar perda a fim de aumentar o ganhos em negociação de portes cirurgicos com operadoras de planos de saúde, além disso sera preciso minimizar o desvio padrão da receita dos portes a fim de balancear os valores dos portes, para que resolver o problema onde uma porte com frequencia baixa tenha valores muito altos e vice e versa
 
-# Variaveis
-**x = valores de negociação**
+## Variaveis
 
-**mc = media cenario dos valores de negociação**
-
-**li = limite inferior**
-
-**ls = limite superior**
-
-**m = media da população**
-
-**N = tamanho da população**
+| Variaveis | Descrição |
+| ---------- | ---------- | 
+|x  | valores de negociação|
+|mc | media cenario dos valores de negociação**|
+|li |  limite inferior |
+|ls |  limite superior |
+|m  | media da população |
+|N  | tamanho da população |
 
 
-# Funções Objetivas
+## Funções Objetivas
 Função de perda de receita e desvio padrão da receita por porte:
 
 $$
@@ -40,6 +46,9 @@ g_2 = \sum({frequencia * x }) - ls
 $$
 
 
-# Click no video abaixo e veja o MVP da solução
+<div align="center">
 
-[![IMAGE ALT TEXT HERE](https://img.olhardigital.com.br/wp-content/uploads/2021/03/shutterstock_1488096026_Easy-Resize.com_.jpg)](https://youtu.be/-X2qao8SEPs)
+# Demonstração
+![IMAGE ALT TEXT HERE](src/demo.gif)
+
+</div>
