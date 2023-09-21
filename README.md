@@ -45,10 +45,27 @@ $$
 g_2 = \sum({frequencia * x }) - ls
 $$
 
+## 🛠️ Technologies Used
+
+- Python
+- Streamlit
+- numpy
+- pandas
+- pymoo
+
+## ⚙️ Installation
+
+```bash
+pip install virtualenv
+python3.11 -m virtualenv .venv --python=python3.11
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Demonstração
 
 <div align="center">
-
-# Demonstração
+  
 ![IMAGE ALT TEXT HERE](src/demo.gif)
 
 </div>
