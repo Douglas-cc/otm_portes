@@ -1,48 +1,46 @@
 <div align="center">
 
-# Otimizador de Negociação de Portes Cirurgicos
+# Surgical Port Trading Optimizer
 ![Alt Text](src/Surgery.jpg)
 ## ⭐  Quick Start  ⭐
 
 </div>
 
-## Proposta
-Uma rede hospitalar deseja usar u algoritmo de otimização para minimizar perda a fim de aumentar o ganhos em negociação de portes cirurgicos com operadoras de planos de saúde, além disso sera preciso minimizar o desvio padrão da receita dos portes a fim de balancear os valores dos portes, para que resolver o problema onde uma porte com frequencia baixa tenha valores muito altos e vice e versa
+## Proposal
+A hospital network wishes to use an optimization algorithm to minimize losses and increase gains in the negotiation of surgical port fees with health insurance providers. Additionally, it is necessary to minimize the standard deviation of the port fee revenue to balance the fee values. This aims to solve the problem where a port with low frequency has very high values, and vice versa.
 
-## Variaveis
+## Variables
 
-| Variaveis | Descrição |
+| Variables | Description |
 | ---------- | ---------- | 
-|x  | valores de negociação|
-|mc | media cenario dos valores de negociação**|
-|li |  limite inferior |
-|ls |  limite superior |
-|m  | media da população |
-|N  | tamanho da população |
+|x  | negotiation values|
+|mc | mean scenario of negotiation values**|
+|li |  lower limit |
+|ls |  upper limit |
+|m  | population mean |
+|N  | population size |
 
 
-## Funções Objetivas
-Função de perda de receita e desvio padrão da receita por porte:
-
-$$
-f_1 = \sum{(mc - x) * frequencia}
-$$
+## Objective Functions
+Revenue loss and revenue standard deviation per port function:
 
 $$
-f_2 = \sqrt{\frac{\sum{(1/receita - m)^2}}{N}}
-$$
-
-
-
-# Algumas restrições
-Como desejamos limitar as soluções entre um intervalo de receita total da negociação foi criado as restrições de limite inferior (lower) limite superior (upper) de receita respectivamente:
-
-$$
-g_1 = li - \sum({frequencia * x })
+f_1 = \sum{(mc - x) * frequency}
 $$
 
 $$
-g_2 = \sum({frequencia * x }) - ls
+f_2 = \sqrt{\frac{\sum{(1/revenue - m)^2}}{N}}
+$$
+
+# Some Constraints
+As we want to limit the solutions within a total revenue range of the negotiation, constraints for lower and upper revenue limits were created, respectively:
+
+$$
+g_1 = li - \sum({frequency * x })
+$$
+
+$$
+g_2 = \sum({frequency * x }) - ls
 $$
 
 ## 🛠️ Technologies Used
@@ -56,13 +54,12 @@ $$
 ## ⚙️ Installation
 
 ```bash
-pip install virtualenv
-python3.11 -m virtualenv .venv --python=python3.11
-source .venv/bin/activate
-pip install -r requirements.txt
+curl -sSL https://pdm.fming.dev/install-pdm.py | python3 -
+pdm install
+source .pdm/venv/bin/activate
 ```
 
-## Demonstração
+## Demonstration
 
 <div align="center">
   
